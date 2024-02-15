@@ -1,0 +1,106 @@
+﻿<Window x:Class="VLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VLog"
+        mc:Ignorable="d"
+        Title="VLog" Height="550" Width="375"
+        ResizeMode="NoResize"
+        Closing="AppClosing">
+    <Grid Background="#242424">
+        <StackPanel Orientation="Vertical" Visibility="Collapsed" x:Name="MainMenu">
+            <Line Height="10"/>
+            <Label HorizontalAlignment="Center" FontSize="40" FontWeight="Bold" Content="E36" Height="54" Foreground="White" x:Name="Main_VehicleName"></Label>
+            <Label HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Content="BMW" Height="43" Foreground="White" x:Name="Main_BrandName"></Label>
+            <Button Content="NOTES" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToNotes"/>
+            <Line Height="10"/>
+            <Button Content="IMPORTANT INFO" Width="200" Height="40" FontSize="20" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToImportantInfo"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Visibility="Collapsed" x:Name="ImportantInfo">
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox FontSize="40" FontWeight="Bold" Height="50" Width="277" Background="#363636" Foreground="White" Text="E36" TextAlignment="Center" x:Name="ImportantInfo_VehicleNameInput" LostFocus="ImportantInfo_TextBoxesFinishedEditing" RenderTransformOrigin="0.65,0.387"/>
+                <TextBlock Text="Vehicle Model" FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="63" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Height="45" Width="277" Background="#363636" Foreground="White" Text="BMW" TextAlignment="Center" x:Name="ImportantInfo_BrandNameInput" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="Vehicle Brand" FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="63" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="277" Background="#363636" Foreground="White" Text="4Y1-SL658-4-8-Z-41-1439" TextAlignment="Center" x:Name="ImportantInfo_VINInput" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="VIN Number" FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="63" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="65" Background="#363636" Foreground="White" Text="31" TextAlignment="Center" x:Name="ImportantInfo_ManDatePt1" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="/" FontSize="30" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="36" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="65" Background="#363636" Foreground="White" Text="12" TextAlignment="Center" x:Name="ImportantInfo_ManDatePt2" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="/" FontSize="30" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="36" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="75" Background="#363636" Foreground="White" Text="2000" TextAlignment="Center" x:Name="ImportantInfo_ManDatePt3" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="Manuf. Date" FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="80" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="277" Background="#363636" Foreground="White" Text="250000" TextAlignment="Center" x:Name="ImportantInfo_Odometer" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="KM On Odom." FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="63" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="65" Background="#363636" Foreground="White" Text="31" TextAlignment="Center" x:Name="ImportantInfo_ServDatePt1" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="/" FontSize="30" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="36" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="65" Background="#363636" Foreground="White" Text="12" TextAlignment="Center" x:Name="ImportantInfo_ServDatePt2" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="/" FontSize="30" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="36" TextWrapping="Wrap" Foreground="White"></TextBlock>
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="75" Background="#363636" Foreground="White" Text="2000" TextAlignment="Center" x:Name="ImportantInfo_ServDatePt3" LostFocus="ImportantInfo_TextBoxesFinishedEditing"></TextBox>
+                <TextBlock Text="Service Date" FontSize="15" FontWeight="Bold" TextAlignment="Center"  Height="41" Width="80" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+            <Line Height="10"/>
+            <Button Content="BACK" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToMainMenu"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Visibility="Visible" x:Name="Notes">
+            <Button Content="+" Width="40" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToAddNote" Margin="15"/>
+
+            <Line Height="10"/>
+            <Button Content="BACK" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToMainMenu"/>
+            <Line Height="10"/>
+            <ScrollViewer Height="400">
+
+                <ScrollViewer.Resources>
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Background" Value="#595959"/>
+                        <Setter Property="Foreground" Value="#404040"/>
+                    </Style>
+                </ScrollViewer.Resources>
+
+                <StackPanel x:Name="NotesCollection">
+                    <!--Note Buttons Go Here-->
+                </StackPanel>
+            </ScrollViewer>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Visibility="Collapsed" x:Name="AddNote">
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="45" Width="277" Background="#363636" Foreground="White" Text="New Service" TextAlignment="Center" x:Name="AddNote_Title"></TextBox>
+                <TextBlock Text="Note Title" FontSize="18" FontWeight="Bold" TextAlignment="Center"  Height="45" Width="80" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+
+            <DockPanel Margin="10">
+                <TextBox HorizontalAlignment="Center" FontSize="25" FontWeight="Bold" Height="300" Width="277" Background="#363636" Foreground="White" Text="New Service" TextAlignment="Center" x:Name="AddNote_Desc"></TextBox>
+                <TextBlock Text="Descrip-tion" FontSize="17" FontWeight="Bold" TextAlignment="Center"  Height="45" Width="80" TextWrapping="Wrap" Foreground="White"></TextBlock>
+            </DockPanel>
+
+            <Button Content="SAVE" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="AddNote_Save" Margin="15"/>
+            <Line Height="10"/>
+            <Button Content="CANCEL" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToNotes"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Visibility="Collapsed" x:Name="OpenNoteView">
+            <TextBlock Text="Title" FontSize="30" FontWeight="Bold" TextAlignment="Center"  Height="45" Width="350" TextWrapping="Wrap" Foreground="White" x:Name="OpenNote_Title"></TextBlock>
+            <Line Height="10"/>
+            <TextBlock Text="Description" FontSize="20" FontWeight="DemiBold" Height="400" Width="350" TextWrapping="Wrap" Foreground="White" x:Name="OpenNote_Desc"></TextBlock>
+            <Line Height="10"/>
+            <Button Content="BACK" Width="100" Height="40" FontSize="25" FontWeight="DemiBold" Background="#363636" Foreground="White" Click="GoToNotes"/>
+        </StackPanel>
+    </Grid>
+</Window>
